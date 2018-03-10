@@ -5,8 +5,13 @@ public class NewThreadHCL implements Runnable {
 	String name; // name of thread
 
 	  Thread t;
+	  
+	  
+	  public NewThreadHCL() {
+		super();
+	}
 
-	  public NewThreadHCL(String threadname) {
+	public NewThreadHCL(String threadname) {
 	    name = threadname;
 	    t = new Thread(this, name);
 	    System.out.println("New thread: " + t);
