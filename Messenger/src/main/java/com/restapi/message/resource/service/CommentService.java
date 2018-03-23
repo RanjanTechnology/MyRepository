@@ -1,6 +1,7 @@
 package com.restapi.message.resource.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,6 +18,18 @@ public class CommentService {
 	
 	private Map<Long, Message> messages = DatabaseClass.getMessage();
 	
+	public CommentService() {
+		Comment comment1 = new Comment(1, "Good book", "Ranjan");
+		Comment comment2 = new Comment(1, "Nice one", "Ranjan");
+		Map<Long, Comment> comments = new HashMap<>();
+		comments.put(1L, comment1);
+		comments.put(2L, comment2);
+		Message message = new Message();
+		message.setComments(comments);
+		messages.put(1L, message);
+		
+	}
+
 	public List<Comment> getAllComments(long messageId) {
 		Map<Long, Comment> comments = messages.get(messageId).getComments();
 		return new ArrayList<Comment>(comments.values());

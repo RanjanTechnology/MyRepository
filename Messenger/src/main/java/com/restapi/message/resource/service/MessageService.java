@@ -16,8 +16,8 @@ public class MessageService {
 	
 	public MessageService() {
 		
-		Message m1 = new Message(101, "Hi Ranjan", "Priyaranjan");
-		Message m2 = new Message(102, "welcome to restful services", "Priyaranjan");
+		Message m1 = new Message(1, "Hi Ranjan", "Priyaranjan");
+		Message m2 = new Message(2, "welcome to restful services", "Priyaranjan");
 		messages.put(1L, m1);
 		messages.put(2L, m2);
 	}

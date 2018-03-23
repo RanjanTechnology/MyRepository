@@ -11,8 +11,9 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.UriInfo;
 
 import com.restapi.message.resource.bean.MessageFilterBean;
 import com.restapi.message.resource.model.Message;
@@ -59,12 +60,43 @@ public class MessageResource {
 	
 	@GET
 	@Path("/{messageId}")
-	public Message getMessage(@PathParam("messageId") long messageId){
-		return messageService.getMessage(messageId);
+	public Message getMessage(@PathParam("messageId") long messageId, @Context UriInfo uriInfo){
+		Message message = messageService.getMessage(messageId);
+		message.addLink(getUriSelf(uriInfo, message), "self");
+		message.addLink(getUriProfile(uriInfo, message), "Profile");
+		message.addLink(getUriComments(uriInfo, message), "Comments");
+		
+		return message;
 	}
 	
 	@Path("/{messageId}/comments")
 	public CommentResource getCommentResource(){
 		return new CommentResource();
+	}
+	
+	private String getUriSelf(UriInfo uriInfo, Message message) {
+		String uri = uriInfo.getBaseUriBuilder()
+		.path(ProfileResource.class)
+		.path(message.getAuthor())
+		.build().toString();
+		return uri;
+	}
+	
+	private String getUriProfile(UriInfo uriInfo, Message message) {
+		String uri = uriInfo.getBaseUriBuilder()
+		.path(MessageResource.class)
+		.path(Long.toString(message.getId()))
+		.build().toString();
+		return uri;
+	}
+	
+	private String getUriComments(UriInfo uriInfo, Message message) {
+		String uri = uriInfo.getBaseUriBuilder()
+		.path(MessageResource.class)
+		.path(MessageResource.class,"getCommentResource")
+		.path(CommentResource.class)
+		.resolveTemplate("messageId", message.getId())
+		.build().toString();
+		return uri;
 	}
 }

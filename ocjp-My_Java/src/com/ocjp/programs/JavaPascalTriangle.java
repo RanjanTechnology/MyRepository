@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class JavaPascalTriangle
 {
-    /*public static void main(String args[])
+    public static void main(String args[])
 	{
 	    int r, i, k, number=1, j;
 		Scanner scan = new Scanner(System.in);
@@ -26,11 +26,11 @@ public class JavaPascalTriangle
 			}
 			System.out.println();
 		}
-	}*/
+	}
 	
-public static void main(String[] args) {
+/*public static void main(String[] args) {
         
-        int rows = 5;
+        int rows = 8;
         
         
         for(int i =0;i<rows;i++) {
@@ -44,5 +44,5 @@ public static void main(String[] args) {
             System.out.println();
         }
         
-    }
+    }*/
 }
