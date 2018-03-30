@@ -62,7 +62,8 @@ public class Test {
 	    }
 
 	    public static void main(String [] args) 
-	    {
+	    {	
+	    	
 	    	Test ba = new Test();
 	        ba.set(ba.b, 0);
 	        ba.set(ba.b, 2);

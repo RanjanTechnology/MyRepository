@@ -2,11 +2,14 @@ package com.ocjp.opps;
 
 public class GameShape {
 	
-	public void displayShape(){
-		System.out.println("displaing shape");
+	public Number add(int a, int b){
+		int sum =0;
+		sum =a+b;
+		System.out.println("Parent class method");
+		return sum;
 	}
 	
-	public static void show(){
+	public void show(){
 		System.out.println("Parent static method");
 	}
 }

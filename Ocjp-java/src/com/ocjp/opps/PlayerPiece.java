@@ -2,11 +2,14 @@ package com.ocjp.opps;
 
 public class PlayerPiece extends GameShape{
 	
-	public void movePiece(){
-		System.out.println("Moving game pieces");
+	public Long add(int a, int b){
+		long sum =0;
+		sum =a+b;
+		System.out.println("Child class method");
+		return sum;
 	}
 	
-	public static void show(){
+	public void show(){
 		System.out.println("Child static method");
 	}
 }
