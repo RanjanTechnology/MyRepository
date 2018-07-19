@@ -2,7 +2,7 @@ package com.mycode.oops;
 
 public class OverridingTest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		OverridingParent p = new OverridingParent();
 		OverridingChild c = new OverridingChild();

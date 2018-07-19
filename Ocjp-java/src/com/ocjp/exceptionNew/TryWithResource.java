@@ -7,7 +7,7 @@ import java.io.IOException;
 public class TryWithResource {
 
 	public void readFile() throws IOException {
-		try (BufferedReader br = new BufferedReader(new FileReader("C:\\Ranjan\\abc.txt"))) {
+		try (FileReader fr = new FileReader("C:\\Ranjan\\abc.txt");BufferedReader br = new BufferedReader(fr)) {
 			String str = br.readLine();
 			System.out.println(str);
 		}

@@ -8,10 +8,10 @@ public class ComparatorTest {
 
 	public static void main(String[] args) {
 		
-		Student s1 = new Student("Ranjan", "BCA", "101");
-		Student s2 = new Student("Aman", "B.tech", "101");
-		Student s3 = new Student("Sanjay", "PG", "101");
-		Student s4 = new Student("Deepak", "MCA", "101");
+		Student s1 = new Student("Ranjan", "BCA", "102");
+		Student s2 = new Student("Ranjan", "MCA", "101");
+		Student s3 = new Student("Sanjay", "PG", "103");
+		Student s4 = new Student("Deepak", "MCA", "104");
 		
 		/*TreeSet<Student> ts = new TreeSet<>(new MyComparator());
 		ts.add(s1);
@@ -28,7 +28,8 @@ public class ComparatorTest {
 		
 		System.out.println(al);
 		
-		Collections.sort(al, new MyComparator());
+		//Collections.sort(al, new MyComparator());
+		Collections.sort(al, new MyStudentCompartor());
 		System.out.println(al);
 	}
 

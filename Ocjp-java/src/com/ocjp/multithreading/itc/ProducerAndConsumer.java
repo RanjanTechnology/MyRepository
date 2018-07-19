@@ -11,11 +11,10 @@ public class ProducerAndConsumer {
 
 		int value = 0;
 
-		while (true) {
 			synchronized (this) {
 
 				while (list.size() == capacity) {
-					wait();
+					//wait();
 					
 					System.out.println("Producer produced-" + value);
 
@@ -31,20 +30,18 @@ public class ProducerAndConsumer {
 					
 					Thread.sleep(1000);
 				}
-			}
 		}
 	}
 	
 	public void consume() throws InterruptedException{
 		
-		while(true){
 
 			synchronized (this)
 			{
 				// consumer thread waits while list
 				// is empty
 				while (list.size()==0)
-					wait();
+					this.wait();
 
 				//to retrive the ifrst job in the list
 				int val = list.removeFirst();
@@ -58,6 +55,5 @@ public class ProducerAndConsumer {
 				Thread.sleep(1000);
 
 			}
-		}
 	}
 }

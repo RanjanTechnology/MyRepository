@@ -8,6 +8,8 @@ public class ClientTest {
 	public static void main(String[] args) {
 		
 		MyInteface myInteface = new MyClass();
+		MyClass my = new MyClass();
+		
 		
 		List<Student> students = new ArrayList<>();
 		students.add(new Student(101, "Ranjan"));
@@ -15,7 +17,8 @@ public class ClientTest {
 		students.add(new Student(103, "Priya"));
 		students.add(new Student(104, "Aman"));
 		
-		List<Student> sortStudent = myInteface.sortStudent(students);
+		//List<Student> sortStudent = myInteface.sortStudent(students);
+		List<Student> sortStudent = my.sortStudent(students);
 		for(Student student : sortStudent){
 			System.out.println(student);
 		}
@@ -31,6 +34,8 @@ public class ClientTest {
 		System.out.println("-------------------------------------------------------");
 		int max = myInteface.getMaxNumber(intValue);
 		System.out.println("Max value in list: "+max);
+		
+		
 		
 	}
 

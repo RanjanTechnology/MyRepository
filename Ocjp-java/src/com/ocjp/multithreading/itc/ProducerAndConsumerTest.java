@@ -11,7 +11,9 @@ public class ProducerAndConsumerTest {
 			@Override
 			public void run() {
 				try {
+					System.out.println("Producer");
 					pc.producer();
+					System.out.println(" Afetr Producer");
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -24,7 +26,9 @@ public class ProducerAndConsumerTest {
 			@Override
 			public void run() {
 				try {
+					System.out.println("Consumer");
 					pc.consume();
+					System.out.println("After Consumer");
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -35,7 +39,7 @@ public class ProducerAndConsumerTest {
 		t2.start();
 		
 		t1.join();
-		t2.join();
+		//t2.join();
 	}
 
 }

@@ -2,7 +2,7 @@ package com.ocjp.program.test;
 
 public class AddTwoArryanOneRow {
 	
-	public int[] sumRow(int[] firstMatrix, int[] secondMatrix){
+	public int[] sumRow(int[] firstMatrix, int[] secondMatrix ,int c){
 				
 		int[] sum = new int[firstMatrix.length];
 		

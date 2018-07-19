@@ -2,7 +2,7 @@ package com.mycode.oops;
 
 public class OverridingParent {
 	
-	public Number calulation(int a, int b){
+	public Number calulation(int a, int b) throws Exception{
 		
 		int sum  = a+b;
 		System.out.println("Parent class method perform addition");

@@ -6,9 +6,10 @@ public class TwoArrayAdditionTest {
 		
 		int[] firstMatrix = {3,4,5};
 		int[] secondMatrix = {3,4,5};
+		int a=2,b=3;
 		
 		AddTwoArryanOneRow ta = new AddTwoArryanOneRow();
-		 int[] sumArray = ta.sumRow(firstMatrix, secondMatrix);
+		 int[] sumArray = ta.sumRow(firstMatrix, secondMatrix,a+b);
 		 
 		 System.out.println("Sum of two Array: ");
 		 System.out.print("{");

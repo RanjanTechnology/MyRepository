@@ -9,6 +9,9 @@ final class ClassCasteExpDemo {
 		Object obj = new Object();
 		obj="abc";
 		System.out.println(obj);
+		Object o1 ="xyz";
+		String s1 = (String)o1;
+		System.out.println(s1);
 	}
 
 }
